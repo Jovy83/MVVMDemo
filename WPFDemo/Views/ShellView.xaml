@@ -65,7 +65,10 @@
         <!--displaymemberpath = the property of the class to display-->
 
         <!--Row 4-->
-        
+        <Button
+            x:Name="ClearText"
+            Grid.Row="4"
+            Grid.Column="1">Clear Names</Button>
         
     </Grid>
 </Window>

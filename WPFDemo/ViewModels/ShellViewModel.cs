@@ -61,5 +61,22 @@ namespace WPFDemo.ViewModels {
             }
         }
 
+        public bool CanClearText(string firstName, string lastName) {
+            //return !String.IsNullOrWhiteSpace(firstName) || !String.IsNullOrWhiteSpace(lastName);
+
+            if (String.IsNullOrWhiteSpace(firstName) && String.IsNullOrWhiteSpace(lastName)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        //public bool CanClearText(string firstName, string lastName) => !String.IsNullOrWhiteSpace(firstName) || !String.IsNullOrWhiteSpace(lastName);
+
+        // we need to have these 2 params here even though we don't use it in the method. this is because CanClearText needs these 2 parameters. If you need to use parameters, ClearText should also have it regardless if you use it in your method or not. 
+        public void ClearText(string firstName, string lastName) {
+            FirstName = "";
+            LastName = "";
+        }
     }
 }
