@@ -26,7 +26,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
+        
+        <!--Row 1-->
         <TextBlock
             Text="{Binding Path=FullName, Mode=OneWay}" 
             Grid.Row="1"
@@ -34,13 +35,12 @@
             Grid.ColumnSpan="2">
         </TextBlock>
 
+        <!--Row 2-->
         <TextBox
             x:Name="FirstName"
             Grid.Row="2"
             Grid.Column="1"
             MinWidth="100" />
-
-
 
         <TextBox
             x:Name="LastName"
@@ -48,7 +48,24 @@
             Grid.Column="2"
             MinWidth="100" />
 
+        <!--Row 3-->
+        <ComboBox
+            x:Name="People"
+            Grid.Row="3"
+            Grid.Column="1" 
+            SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}"
+            DisplayMemberPath="FirstName"/>
+        <TextBlock
+            x:Name="SelectedPerson_LastName"
+            Grid.Row="3"
+            Grid.Column="2" />
 
+        <!--one way = pulled/read from the property-->
+        <!--one way to source = not just read the property, can also overwrite the property-->
+        <!--displaymemberpath = the property of the class to display-->
 
+        <!--Row 4-->
+        
+        
     </Grid>
 </Window>
